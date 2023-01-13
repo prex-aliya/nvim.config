@@ -23,10 +23,10 @@ require('lua/plug')             -- nvim plugins and configurations
 
 
 --require('lua/statusline')   -- custom status line "https://elianiva.my.id/post/neovim-lua-statusline/"
-require('lua/global')           -- global variables     "vim.g"
+--require('lua/global')           -- global variables     "vim.g"
 require('lua/api')              -- nvim api calls       "vim.api"
-require('lua/map')              -- nvim keymaps         "map()"
 require('lua/opt')              -- vim normal set       "vim.opt"
+require('lua/map')              -- nvim keymaps         "map()"
 require('lua/colors')
 
 

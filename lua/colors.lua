@@ -1,11 +1,12 @@
-function ColorBackground(color)
-    color = color or "blue"
-    vim.cmd.colorscheme(color)
+function Color(color)
+	vim.cmd([[ source ./MinePink.vim ]])
 
-    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-vim.cmd([[
-    source ./MinePink.vim
-]])
+
+Color()
+
+-- set colorscheme
+vim.o.termguicolors = true
