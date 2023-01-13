@@ -1,4 +1,4 @@
--- Define Keymaps {{{
+-- Define Keymaps
 local function map(mode, lhs, rhs, opts)
   local options = { noremap = true, silent = true }
   if opts then
@@ -6,14 +6,13 @@ local function map(mode, lhs, rhs, opts)
   end
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
--- }}}
 
 -- set leader
 map('', '<SPACE>', '<nop>')
 vim.g.mapleader = " "
 vim.g.localleader = "," -- local leader
 
-map('t', '<esc>', '<C-\\><C-n>')
+vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
 
 -- split {{{
 map('n', '<Leader>s', ':split<CR>')

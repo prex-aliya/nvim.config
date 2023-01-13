@@ -1,3 +1,5 @@
+-- TODO: remove
+
 vim.g['rainbow_active'] = '1'
 vim.g.coc_global_extensions = {
     'coc-emmet',

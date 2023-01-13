@@ -3,11 +3,6 @@
 " Maintainer: github.com/nikolvs
 " License:    The MIT License (MIT)
 "
-" A minimal pink colorscheme for Vim.
-"
-" Forked from paramount:
-" https://github.com/owickstrom/vim-colors-paramount
-"
 """
 hi clear
 
