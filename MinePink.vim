@@ -1,9 +1,9 @@
-" Name:       sunbather.vim
-" Version:    0.1.0
-" Maintainer: github.com/nikolvs
-" License:    The MIT License (MIT)
+" Name:       MinePink
+" Version:    0.0.0
+" Maintainer: github.com/prex-aliya
+" License:    The Unlicense
 "
-"""
+
 hi clear
 
 if exists('syntax on')

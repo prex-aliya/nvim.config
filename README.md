@@ -2,6 +2,10 @@
 
 This is my neovim configuration files
 
+It is transformed into lua,
+Although I am too lazy to transform my colorscheme into lua as well.
+
+
 # Install
 
 git clone this repo, then install
