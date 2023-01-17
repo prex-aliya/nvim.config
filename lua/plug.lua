@@ -125,6 +125,7 @@ Servers = {
   -- tsserver = {},
   cmake = {},
   html = {},
+  markdown = {},
 
   sumneko_lua = {
     Lua = {
