@@ -13,38 +13,42 @@ require('packer').startup(function(use)
         use 'wbthomason/packer.nvim'
         use 'nvim-tree/nvim-web-devicons'
         use 'lewis6991/gitsigns.nvim'
-        use 'iamcco/markdown-preview.nvim'
+
+        use({
+                "iamcco/markdown-preview.nvim",
+                run = function() vim.fn["mkdp#util#install"]() end,
+        })
 
         use { -- LSP Configuration & Plugins
-                'neovim/nvim-lspconfig',
-                requires = {
-                        -- Automatically install LSPs to stdpath for neovim
-                        'williamboman/mason.nvim',
-                        'williamboman/mason-lspconfig.nvim',
+        'neovim/nvim-lspconfig',
+        requires = {
+                -- Automatically install LSPs to stdpath for neovim
+                'williamboman/mason.nvim',
+                'williamboman/mason-lspconfig.nvim',
 
-                        -- Useful status updates for LSP
-                        'j-hui/fidget.nvim',
+                -- Useful status updates for LSP
+                'j-hui/fidget.nvim',
 
-                        -- Additional lua configuration, makes nvim stuff amazing
-                        'folke/neodev.nvim',
-                },
-        }
-        use { -- Autocompletion
-                'hrsh7th/nvim-cmp',
-                requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+                -- Additional lua configuration, makes nvim stuff amazing
+                'folke/neodev.nvim',
+        },
+}
+use { -- Autocompletion
+'hrsh7th/nvim-cmp',
+requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
         }
         -- Fuzzy Finder (files, lsp, etc)
         use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
         use { -- Highlight, edit, and navigate code
-                'nvim-treesitter/nvim-treesitter',
-                run = function()
-                        pcall(require('nvim-treesitter.install').update { with_sync = true })
-                end,
-        }
-        -- Additional text objects via treesitter
-        use { 'nvim-treesitter/nvim-treesitter-textobjects',
-                after = 'nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+                pcall(require('nvim-treesitter.install').update { with_sync = true })
+        end,
+}
+-- Additional text objects via treesitter
+use { 'nvim-treesitter/nvim-treesitter-textobjects',
+after = 'nvim-treesitter',
         }
 
 
@@ -119,21 +123,21 @@ local servers = {
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 Servers = {
-  clangd = {},
-  -- gopls = {},
-  pyright = {},
-  rust_analyzer = {},
-  -- tsserver = {},
-  cmake = {},
-  html = {},
-  ltex = {},
+        -- gopls = {},
+        -- tsserver = {},
+        clangd = {},
+        pyright = {},
+        rust_analyzer = {},
+        cmake = {},
+        html = {},
+        ltex = {},
 
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
+        sumneko_lua = {
+                Lua = {
+                        workspace = { checkThirdParty = false },
+                        telemetry = { enable = false },
+                },
+        },
 }
 
 
@@ -145,35 +149,34 @@ local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
 cmp.setup {
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert {
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    },
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-  },
-  sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-  },
+        snippet = {
+                expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                end,
+        },
+        mapping = cmp.mapping.preset.insert {
+                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<CR>'] = cmp.mapping.confirm {
+                        behavior = cmp.ConfirmBehavior.Replace,
+                        select = true,
+                },
+                ['<Tab>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                                cmp.select_next_item()
+                        elseif luasnip.expand_or_jumpable() then
+                                luasnip.expand_or_jump()
+                        else
+                                fallback()
+                        end
+                end, { 'i', 's' }),
+        },
+        sources = {
+                { name = 'nvim_lsp' },
+                { name = 'luasnip' },
+        },
 }
 -- }}}
 -- Markdown-Preview {{{
-vim.g.mkdp_browser = 'surf'
 -- }}}
 
 
