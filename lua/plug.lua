@@ -13,6 +13,7 @@ require('packer').startup(function(use)
         use 'wbthomason/packer.nvim'
         use 'nvim-tree/nvim-web-devicons'
         use 'lewis6991/gitsigns.nvim'
+        use 'iamcco/markdown-preview.nvim'
 
         use { -- LSP Configuration & Plugins
                 'neovim/nvim-lspconfig',
@@ -59,7 +60,7 @@ require('packer').startup(function(use)
         end
 end)
 -- }}}
--- else {{{
+-- Else {{{
 -- When we are bootstrapping a configuration, it doesn't
 -- make sense to execute the rest of the init.lua.
 --
@@ -125,7 +126,7 @@ Servers = {
   -- tsserver = {},
   cmake = {},
   html = {},
-  markdown = {},
+  ltex = {},
 
   sumneko_lua = {
     Lua = {
@@ -171,7 +172,9 @@ cmp.setup {
   },
 }
 -- }}}
-
+-- Markdown-Preview {{{
+vim.g.mkdp_browser = 'surf'
+-- }}}
 
 
 -- vim: tw=80

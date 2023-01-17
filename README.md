@@ -9,7 +9,7 @@ Although I am too lazy to transform my colorscheme into lua as well.
 # Install
 
 git clone this repo, then install
-(packer)[https://github.com/wbthomason/packer.nvim#quickstart] if not
+[packer](https://github.com/wbthomason/packer.nvim#quickstart) if not
 already installed.
 
 
