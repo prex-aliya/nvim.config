@@ -42,7 +42,5 @@ After Moving the files, you need to update the fonts cache
 
 
 
-___welcome___
-=============
 
 <!-- vim: tw=80
