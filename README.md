@@ -40,6 +40,18 @@ After Moving the files, you need to update the fonts cache
     fc-cache -fv
 
 
+# Problems And Fixes
+
+## surf and markdown preview
+
+The default browser for my setup up is surf, and when you run markdown preview and
+nothing happens try:
+
+'''console
+:call mkdp#util#install()
+'''
+
+Else make an issue.
 
 
 
