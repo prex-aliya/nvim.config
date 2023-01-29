@@ -19,6 +19,12 @@ require('packer').startup(function(use)
                 run = function() vim.fn["mkdp#util#install"]() end,
         })
 
+        use({
+                "aserowy/tmux.nvim",
+                config = function()
+                        require("terminal.plugin_tmux").setup()
+                end,
+        })
         use { -- LSP Configuration & Plugins
                 'neovim/nvim-lspconfig',
                 requires = {
@@ -34,8 +40,8 @@ require('packer').startup(function(use)
                 },
         }
         use { -- Autocompletion
-        'hrsh7th/nvim-cmp',
-        requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
+                'hrsh7th/nvim-cmp',
+                requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
         }
         -- Fuzzy Finder (files, lsp, etc)
         use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -104,8 +110,22 @@ local servers = {
 -- config vvv
 
 
-
-
+-- Tmux {{{
+require("tmux").setup({
+        copy_sync = {
+                enable = true,
+                redirect_to_clipboard = true,
+        },
+        navigation = {
+                cycle_navigation = false,
+                enable_default_keybindings = true,
+                persist_zoom = true,
+        },
+        resize = {
+                enable_default_keybindings = true,
+        },
+})
+-- }}}
 -- ZenMode {{{
 --require("zen-mode").setup({
 --  window = {
