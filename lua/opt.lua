@@ -36,3 +36,6 @@ set.updatetime = 400
 set.signcolumn = "yes"
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
+
+-- scrolloff
+vim.o.scrolloff = 8
