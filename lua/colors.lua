@@ -6,10 +6,11 @@
 -- https://lospec.com/palette-list/cyberpunk-neons
 
 function Color()
+        local fn = vim.fn
         local g = vim.g
+        local highlight = vim.api.nvim_set_hl
 
-        local black             = "#09010d"
-
+        -- Colors {{{
         local medium_gray       = "#767676"
         local white             = "#F1F1F1"
         local actual_white      = "#FFFFFF"
@@ -26,7 +27,6 @@ function Color()
         local orange            = "#D75F5F"
         local darker_blue       = "#005F87"
         local dark_blue         = "#008EC4"
-        local blue              = "#20BBFC"
         local light_blue        = "#b6d6fd"
         local dark_cyan         = "#20A5BA"
         local light_cyan        = "#4FB8CC"
@@ -37,8 +37,19 @@ function Color()
         local light_yellow      = "#ffff87"
         local dark_yellow       = "#A89C14"
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = black })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = black })
+
+        -- V Mine Colors
+        local red               = "#ff0546"
+        -- V Actuall use Colors
+        local blue              = "#0ce6f2"
+        local black             = "#000000"
+        local bg                = black
+        -- }}}
+
+
+        highlight(0, "Comment", { fg = blue })
+	highlight(0, "Normal", { bg = bg })
+	highlight(0, "NormalFloat", { bg = bg })
 
 end
 
