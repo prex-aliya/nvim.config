@@ -42,7 +42,8 @@ function Color()
         local red               = "#ff0546"
         -- V Actuall use Colors
         local blue              = "#0ce6f2"
-      local black             = "#09010d"
+        -- local black             = "#09010d"
+        local black             = "#000000"
         local bg                = black
         -- }}}
 

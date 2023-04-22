@@ -80,3 +80,7 @@ vim.keymap.set('n', '<Leader><Leader>T', ':split<CR>:terminal<CR>:horizontal res
 
 -- Wrap
 vim.keymap.set('n', '<S-w>', ':set wrap!<CR>')
+
+-- keymap change
+vim.keymap.set('n', '<Leader><Leader>k', ':set keymap=kana<CR>')
+vim.keymap.set('n', '<Leader><Leader>m', ':set keymap=<CR>')
