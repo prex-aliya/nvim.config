@@ -69,4 +69,4 @@ vim.keymap.set('n', '<S-w>', ':set wrap!<CR>')
 
 -- keymap change
 vim.keymap.set('n', '<Leader>k', ':set keymap=kana<CR>')
-vim.keymap.set('n', '<Leader>m', ':set keymap=<CR>')
+-- vim.keymap.set('n', '<Leader>m', ':set keymap=<CR>')
