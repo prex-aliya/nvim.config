@@ -62,9 +62,6 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 -- }}}
 
 
--- Remap control c to esc
-vim.keymap.set('i', '<C-c>', '<esc>')
-
 -- Escape the terminal
 vim.keymap.set('t', '<esc>', '<C-\\><C-n>')
 
