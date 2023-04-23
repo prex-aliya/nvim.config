@@ -43,24 +43,6 @@ require('packer').startup(function(use)
                 'hrsh7th/nvim-cmp',
                 requires = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
         }
-        -- Fuzzy Finder (files, lsp, etc)
-        use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
-        use { -- Highlight, edit, and navigate code
-                'nvim-treesitter/nvim-treesitter',
-                run = function()
-                        pcall(require('nvim-treesitter.install').update { with_sync = true })
-                end,
-        }
-        -- Additional text objects via treesitter
-        use { 'nvim-treesitter/nvim-treesitter-textobjects',
-                after = 'nvim-treesitter',
-        }
-
-        -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
-        local has_plugins, plugins = pcall(require, 'custom.plugins')
-        if has_plugins then
-                plugins(use)
-        end
 
         if is_bootstrap then
                 require('packer').sync()
@@ -80,35 +62,9 @@ if is_bootstrap then
         print '=================================='
         return
 end
-
--- Automatically source and re-compile packer whenever you save this init.lua
-local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-        command = 'source <afile> | silent! LspStop | silent! LspStart | PackerCompile',
-        group = packer_group,
-        pattern = vim.fn.expand '$MYVIMRC',
-})
-
-
-
-local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        rust_analyzer = {},
-        -- tsserver = {},
-
-        sumneko_lua = {
-                Lua = {
-                        workspace = { checkThirdParty = false },
-                        telemetry = { enable = false },
-                },
-        },
-}
 -- }}}
 
 -- config vvv
-
 
 -- Tmux {{{
 require("tmux").setup({
@@ -126,13 +82,6 @@ require("tmux").setup({
         },
 })
 -- }}}
--- ZenMode {{{
---require("zen-mode").setup({
---  window = {
---    width = 128 --.75 -- width will be 85% of the editor width
---  }
---})
----- }}}
 -- lsp/nvim-cmp {{{
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -148,13 +97,7 @@ Servers = {
         cmake = {},
         html = {},
         ltex = {},
-
-        sumneko_lua = {
-                Lua = {
-                        workspace = { checkThirdParty = false },
-                        telemetry = { enable = false },
-                },
-        },
+        --sumneko_lua = {},
 }
 
 
@@ -193,9 +136,8 @@ cmp.setup {
         },
 }
 -- }}}
--- Markdown-Preview {{{
+-- Markdown-Preview
 vim.g.mkdp_browser = 'surf'
--- }}}
 
 
 -- vim: tw=80
