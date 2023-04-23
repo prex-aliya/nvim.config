@@ -29,12 +29,6 @@ vim.keymap.set('', '<down>', '<nop>')
 vim.keymap.set('', '<left>', '<nop>')
 vim.keymap.set('', '<right>', '<nop>')
 -- }}}
--- Shift Lines {{{
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
-vim.keymap.set('i', '<A-j>', '<Esc>:m .+1<CR>==gi')
-vim.keymap.set('i', '<A-k>', '<Esc>:m .-2<CR>==gi')
--- }}}
 -- telescope {{{
 require('telescope').setup { defaults = { mappings = { i = {
         ['<C-u>'] = false,
@@ -74,5 +68,5 @@ vim.keymap.set('n', '<Leader><Leader>T', ':split<CR>:terminal<CR>:horizontal res
 vim.keymap.set('n', '<S-w>', ':set wrap!<CR>')
 
 -- keymap change
-vim.keymap.set('n', '<Leader><Leader>k', ':set keymap=kana<CR>')
-vim.keymap.set('n', '<Leader><Leader>m', ':set keymap=<CR>')
+vim.keymap.set('n', '<Leader>k', ':set keymap=kana<CR>')
+vim.keymap.set('n', '<Leader>m', ':set keymap=<CR>')
