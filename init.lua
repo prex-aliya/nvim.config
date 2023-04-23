@@ -29,7 +29,6 @@ source $HOME/.config/nvim/MinePink.vim
 local config_files = vim.fn.stdpath('config') .. '/?.lua'
 package.path = package.path .. ';' .. config_files
 
-
 require('lua/map') -- nvim keymaps         "map()"
 require('lua/opt') -- vim normal set       "vim.opt"
 require('lua/plug') -- nvim plugins and configurations

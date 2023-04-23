@@ -15,8 +15,6 @@ local M = {}
 M.separators = {
   arrow       = { " ", " " },
   ascii       = { "> ", " <" },
-  rounded     = { " ", " " },
-  blank       = { "  ", "  " },
 }
 
 -- Seperator Between Items: Possible values {'arrow', 'rounded', 'blank'}
