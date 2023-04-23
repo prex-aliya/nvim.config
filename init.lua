@@ -30,7 +30,6 @@ local config_files = vim.fn.stdpath('config') .. '/?.lua'
 package.path = package.path .. ';' .. config_files
 
 
---require('moonfly')
 require('lua/map') -- nvim keymaps         "map()"
 require('lua/opt') -- vim normal set       "vim.opt"
 require('lua/plug') -- nvim plugins and configurations
