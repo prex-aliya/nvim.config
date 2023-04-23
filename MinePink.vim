@@ -1,8 +1,8 @@
-" Name:       MinePink
-" Version:    0.0.0
-" Maintainer: github.com/prex-aliya
-" License:    The Unlicense
-"
+" Name:       MinePink                  "
+" Version:    0.0.0                     "
+" Maintainer: github.com/prex-aliya     "
+" License:    The Unlicense             "
+"""""""""""""""""""""""""""""""""""""""""
 
 hi clear
 
