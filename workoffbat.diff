@@ -1,0 +1,78 @@
+Only in nvim.config: .git
+diff -bur /home/jv/.config/nvim/lua/plug.lua nvim.config/lua/plug.lua
+--- /home/jv/.config/nvim/lua/plug.lua	2023-05-15 11:28:17.098468000 -1000
++++ nvim.config/lua/plug.lua	2023-05-15 11:31:10.161604000 -1000
+@@ -19,12 +19,12 @@
+                 run = function() vim.fn["mkdp#util#install"]() end,
+         })
+ 
+-        --use({
+-        --        "aserowy/tmux.nvim",
+-        --        config = function()
+-        --                require("terminal.plugin_tmux").setup()
+-        --        end,
+-        --})
++        use({
++                "aserowy/tmux.nvim",
++                config = function()
++                        require("terminal.plugin_tmux").setup()
++                end,
++        })
+         use { -- LSP Configuration & Plugins
+                 'neovim/nvim-lspconfig',
+                 requires = {
+@@ -66,22 +66,22 @@
+ 
+ -- config vvv
+ 
+----- Tmux {{{
+---require("tmux").setup({
+---        copy_sync = {
+---                enable = true,
+---                redirect_to_clipboard = true,
+---        },
+---        navigation = {
+---                cycle_navigation = false,
+---                enable_default_keybindings = true,
+---                persist_zoom = true,
+---        },
+---        resize = {
+---                enable_default_keybindings = true,
+---        },
+---})
+----- }}}
++-- Tmux {{{
++require("tmux").setup({
++        copy_sync = {
++                enable = true,
++                redirect_to_clipboard = true,
++        },
++        navigation = {
++                cycle_navigation = false,
++                enable_default_keybindings = true,
++                persist_zoom = true,
++        },
++        resize = {
++                enable_default_keybindings = true,
++        },
++})
++-- }}}
+ -- lsp/nvim-cmp {{{
+ -- Enable the following language servers
+ --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
+@@ -91,11 +91,11 @@
+ Servers = {
+         -- gopls = {},
+         -- tsserver = {},
+-        --clangd = {},
+-        --pyright = {},
+-        --rust_analyzer = {},
++        clangd = {},
++        pyright = {},
++        rust_analyzer = {},
+         cmake = {},
+-        --html = {},
++        html = {},
+         ltex = {},
+         --sumneko_lua = {},
+ }

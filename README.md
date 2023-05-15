@@ -5,6 +5,7 @@ This is my neovim configuration files
 It is transformed into lua,
 Although I am too lazy to transform my colorscheme into lua as well.
 
+_Added work off the bat diff file to help with little to no dependencys_
 
 # Install
 
